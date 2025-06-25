@@ -1,0 +1,13 @@
+1 - select Nome, Ano from filmes;
+2 - select Nome, Ano, Duracao from filmes order by ano;
+3 - select Nome, Ano, Duracao from filmes where Nome = 'De Volta para o Futuro';
+4 - select Nome, Ano, Duracao from filmes where Ano = 1997;
+5 - select Nome, Ano, Duracao from filmes where Ano >= 2000;
+6 - select Nome, Ano, Duracao from filmes where Duracao > 100 And Duracao <150 order by Duracao;
+7 - SELECT Ano, COUNT(*) AS Quantidade FROM Filmes Group by Ano Order by Quantidade desc;
+8 - select PrimeiroNome, UltimoNome, Genero from Atores where Genero = 'M';
+9 - select PrimeiroNome, UltimoNome, Genero from Atores where Genero = 'F' order by PrimeiroNome;
+10 - select Filmes.Nome, Generos.Genero from Filmes, Generos, FilmesGenero where ((filmes.Id = FilmesGenero.IdFilme) And (FilmesGenero.IdGenero = Generos.Id));
+10 - select Filmes.Nome, Generos.Genero from (Filmes inner join FilmesGenero on filmes.id = FilmesGenero.IdFilme) inner join Generos on FilmesGenero.IdGenero = Generos.Id;
+11 - select Filmes.Nome, Generos.Genero from (Filmes inner join FilmesGenero on filmes.id = FilmesGenero.IdFilme) inner join Generos on FilmesGenero.IdGenero = Generos.Id where Generos.Genero = 'Mistério';
+12 - select Filmes.Nome, Atores.PrimeiroNome, Atores.UltimoNome, ElencoFilme.Papel from (Filmes inner join ElencoFilme on filmes.id = ElencoFilme.IdFilme) inner join Atores on ElencoFilme.IdAtor = Atores.Id;
